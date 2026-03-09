@@ -1,0 +1,11 @@
+#  这一块是在配置 Spring Boot 内置 Web 服务器。Spring Boot 启动后，会自动带一个内置服务器，一般是 Tomcat。
+server:
+  port:8080
+
+#  这一块是 Spring Boot 自己的核心配置区域。
+#  以后数据库、Redis 等很多配置都会写在这里。
+spring:
+#  表示这是“应用本身”的配置。
+  application:
+#    给当前 Spring Boot 应用起个名字，叫 iceflow。这个名字现在看起来没啥用，但后面会在：日志,监控,微服务配置, 某些框架集成里派上用场
+    name:iceflow
