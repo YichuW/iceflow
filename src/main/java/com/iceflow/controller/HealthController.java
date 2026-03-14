@@ -1,5 +1,6 @@
 package com.iceflow.controller;
 
+import com.iceflow.common.ApiResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthController {
     @GetMapping("/ping")
-    public String ping() {
+    public ApiResponse<String> ping() {
         /**
          * 这个方法返回一个字符串。
          *
@@ -25,6 +26,15 @@ public class HealthController {
          * 也就是说，浏览器会直接看到：
          * iceflow running
          */
-        return "iceflow running";
+//        return "iceflow running";
+        /**
+         * ApiResponse.success("iceflow running")
+         *
+         * 会创建一个统一成功响应对象，内容相当于：
+         * code = 200
+         * message = "success"
+         * data = "iceflow running"
+         */
+        return ApiResponse.success("iceflow running");
     }
 }
